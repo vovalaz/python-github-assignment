@@ -6,7 +6,7 @@ name: Get pull requests
 on:
   schedule:
     - cron: "25 10 * * *"
-    - cron: "40 14 * * *"
+    - cron: "50 12 * * *"
 
 jobs:
   build:
