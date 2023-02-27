@@ -27,29 +27,31 @@ if __name__ == "__main__":
         print(f"\tURL: {pr.html_url}")
         print()
 
-        print("Commits:")
+        print("\tCommits:")
         commits = pr.get_commits()
         for commit in commits:
-            print(f"- {commit.sha} ({commit.committer.login})")
-            print(f"  Message: {commit.commit.message}")
-            print(f"  Date: {commit.commit.committer.date}")
-            print(f"  URL: {commit.html_url}")
+            print(f"\t\t- {commit.sha} ({commit.committer.login})")
+            print(f"\t\tMessage: {commit.commit.message}")
+            print(f"\t\tDate: {commit.commit.committer.date}")
+            print(f"\t\tURL: {commit.html_url}")
             print()
 
-        print("Review comments:")
-        review_comments = pr.get_review_comments()
-        for comment in review_comments:
-            print(f"- {comment.user.login}: {comment.body}")
-            print(f"  Date: {comment.created_at}")
-            print(f"  URL: {comment.html_url}")
+        print("\tComments:")
+        comments = pr.get_issue_comments()
+        for comment in comments:
+            print(f"\t\t- {comment.user.login}: {comment.body}")
+            print(f"\t\tDate: {comment.created_at}")
+            print(f"\t\tURL: {comment.html_url}")
             print()
 
-        print("Requested reviewers:")
-        requested_reviewers = pr.get_review_requests()
+        print("\tReviewers:")
+        requested_reviewers, requested_reviewers_team = pr.get_review_requests()
         for reviewer in requested_reviewers:
-            print(f"- {reviewer.login}")
+            print(f"\t\t- {reviewer.login}")
         print()
 
         now = datetime.utcnow()
         time_open = now - pr.created_at
-        print(f"Time open: {time_open}\n")
+        print(f"\tTime open: {time_open}\n")
+        print("------------------------------------------------------------------------------------------")
+        print()
