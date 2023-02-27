@@ -1,6 +1,7 @@
 name: Get pull requests
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "*/5 * * * *"
     - cron: "25 8 * * *"
