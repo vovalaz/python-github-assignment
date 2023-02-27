@@ -3,16 +3,13 @@ from datetime import datetime
 from dotenv import load_dotenv, find_dotenv
 from github import Github
 
+
 if find_dotenv():
     load_dotenv(find_dotenv())
 
 ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
 REPO_OWNER = os.getenv("REPO_OWNER")
 REPO_NAME = os.getenv("REPO_NAME")
-
-print(f"ACCESS_TOKEN = {ACCESS_TOKEN}")
-print(f"REPO_OWNER = {REPO_OWNER}")
-print(f"REPO_NAME = {REPO_NAME}")
 
 
 if __name__ == "__main__":
