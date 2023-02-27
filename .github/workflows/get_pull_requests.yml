@@ -4,10 +4,9 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "*/5 * * * *"
-    - cron: "25 8 * * *"
 
 env:
-  ACCESS_TOKEN: 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
+  ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   REPO_OWNER: vovalaz
   REPO_NAME: python-github-assignment
 
