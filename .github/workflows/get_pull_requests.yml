@@ -8,6 +8,11 @@ on:
     - cron: "0 13 * * *"
     - cron: "0 15 * * *"
 
+env:
+  ACCESS_TOKEN: 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
+  REPO_OWNER: vovalaz
+  REPO_NAME: python-github-assignment
+
 jobs:
   build:
 
